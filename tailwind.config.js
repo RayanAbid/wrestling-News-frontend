@@ -6,14 +6,15 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
     "./sections/**/*.{js,ts,jsx,tsx}",
   ],
+  // color pallete: https://colorhunt.co/palette/161853292c6dfaedf0ec255a
   theme: {
     typography: (theme) => ({}),
     extend: {
       colors: {
-        main: "#ffff",
-        white: "#ffff",
-        darkBgMain: "#1E293B",
-        textdarkMain: "#ffff",
+        mainTextLight: "#161853",
+        white: "#FAEDF0",
+        darkBgMain: "#161853",
+        textdarkMain: "#FAEDF0",
       },
     },
   },

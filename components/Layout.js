@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
     <>
       <Head>
         <title>Wrestle Break</title>
-        <link rel="shortcut icon" href="../static/logo.png" />
+        <link rel="shortcut icon" href="/favicon.svg" />
         <link
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
           rel="stylesheet"

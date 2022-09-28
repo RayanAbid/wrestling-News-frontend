@@ -56,7 +56,7 @@ function Header() {
   };
 
   return (
-    <nav className="w-full bg-gray-100 dark:bg-darkBgMain">
+    <nav className="w-full drop-shadow-lg bg-gray-100 dark:bg-darkBgMain">
       <div className="container mx-auto px-6 flex items-center justify-between">
         <div className="flex items-center" aria-label="Home" role="img">
           <img

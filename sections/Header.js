@@ -2,6 +2,9 @@ import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
 import Button from "../components/Button";
 
+// import logo
+import Logo from "../public/logo.png";
+
 function Header() {
   const { systemTheme, theme, setTheme } = useTheme();
   const [show, setShow] = useState(false);
@@ -19,7 +22,7 @@ function Header() {
     if (currentTheme === "dark") {
       return (
         <Button
-          className="bg-gray-200 dark:bg-gray-600"
+          className="bg-gray-200 dark:bg-darkBgMain"
           onClick={() => setTheme("light")}
         >
           <svg
@@ -53,12 +56,12 @@ function Header() {
   };
 
   return (
-    <nav className="w-full bg-gray-100 dark:bg-black">
+    <nav className="w-full bg-gray-100 dark:bg-darkBgMain">
       <div className="container mx-auto px-6 flex items-center justify-between">
         <div className="flex items-center" aria-label="Home" role="img">
           <img
-            className="cursor-pointer w-8 sm:w-auto"
-            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/center_aligned_with_image-svg1.svg"
+            className="cursor-pointer w-8 sm:w-2 md:w-8"
+            src={"/logo.png"}
             alt="logo"
           />
           <p className="ml-2 lg:ml-4 text-base lg:text-2xl font-bold light:text-gray-800 dark:text-textdarkMain">
@@ -68,13 +71,9 @@ function Header() {
         <div>
           <button
             onClick={() => setShow(!show)}
-            className="sm:block md:hidden lg:hidden text-gray-500 hover:text-gray-700 focus:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
+            className="sm:block md:hidden lg:hidden light:text-gray-800 dark:text-textdarkMain light:light:hover:text-gray-800 dark:hover:text-textdarkMainHover dark:hover:text-textdarkMainHover focus:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
           >
-            <img
-              className="h-8 w-8"
-              src="https://tuk-cdn.s3.amazonaws.com/can-uploader/center_aligned_with_image-svg4.svg"
-              alt="show"
-            />
+            <i class="fas fa-bars"></i>
           </button>
           <div
             id="menu"
@@ -90,7 +89,7 @@ function Header() {
                 alt="hide"
               />
             </button>
-            <ul className="flex text-3xl md:text-base items-center py-8 md:flex flex-col md:flex-row justify-center fixed md:relative top-0 bottom-0 left-0 right-0 bg-white md:bg-transparent  z-20">
+            <ul className="flex text-3xl md:text-base items-center py-8 md:flex flex-col md:flex-row justify-center fixed md:relative top-0 bottom-0 left-0 right-0 bg-white dark:bg-darkBgMain md:bg-transparent  z-20">
               <li className="light:text-gray-600 dark:text-textdarkMain text-lg light:light:hover:text-gray-800 dark:hover:text-textdarkMainHover dark:hover:text-textdarkMainHover cursor-pointer md:ml-10 pt-10 md:pt-0">
                 <a href="javascript:void(0)">Company</a>
               </li>

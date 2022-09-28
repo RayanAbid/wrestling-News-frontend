@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="py-9 bg-gray-100 dark:bg-black overflow-y-hidden">
+    <div className="py-9 light:bg-gray-100 dark:bg-darkBgMain overflow-y-hidden">
       {/* Code block starts */}
       <div className="w-full px-6">
         <div className="mt-8 relative rounded-lg bg-indigo-700 container mx-auto flex flex-col items-center pt-12 sm:pt-24 pb-24 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64">

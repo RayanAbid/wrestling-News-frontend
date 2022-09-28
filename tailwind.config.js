@@ -9,10 +9,12 @@ module.exports = {
   theme: {
     typography: (theme) => ({}),
     extend: {
-      main: "",
-      white: "",
-      darkBg: "#1E293B",
-      textdarkMain: "#ffff",
+      colors: {
+        main: "#ffff",
+        white: "#ffff",
+        darkBgMain: "#1E293B",
+        textdarkMain: "#ffff",
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],

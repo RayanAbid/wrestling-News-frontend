@@ -53,20 +53,21 @@ function Header() {
   };
 
   return (
-    <nav className="w-full drop-shadow-lg bg-gray-100 dark:bg-darkBgMain">
-      <div className="container mx-auto px-6 flex items-center justify-between">
-        <div className="flex items-center" aria-label="Home" role="img">
-          <img
-            className="cursor-pointer  w-8 sm:w-2 md:w-8"
-            src={"/logo.png"}
-            alt="logo"
-          />
-          <p className="ml-2 lg:ml-4 text-base lg:text-2xl  text-mainTextLight dark:text-textdarkMain">
-            Wrestle Break
-          </p>
-        </div>
-        <div>
-          <button
+    <div className="bg-gradient-to-r from-main  to-secondry">
+      <nav className="w-full drop-shadow-lg  bg-clip-padding bg-white bg-opacity-20 backdrop-blur-lg ">
+        <div className="container mx-auto px-6 flex items-center justify-between">
+          <div className="flex items-center" aria-label="Home" role="img">
+            <img
+              className="cursor-pointer  w-8 sm:w-2 md:w-8"
+              src={"/logo.png"}
+              alt="logo"
+            />
+            <p className="ml-2 lg:ml-4 text-base lg:text-2xl  text-mainTextLight dark:text-textdarkMain">
+              Wrestle Break
+            </p>
+          </div>
+          <div className="pt-20">
+            {/* <button
             onClick={() => setShow(!show)}
             className="sm:block md:hidden lg:hidden text-mainTextLight dark:text-textdarkMain light:hover:text-gray-800 dark:hover:text-textdarkMainHover dark:hover:text-textdarkMainHover focus:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
           >
@@ -100,10 +101,11 @@ function Header() {
                 {renderThemeChanger()}
               </li>
             </ul>
+          </div> */}
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 }
 

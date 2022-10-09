@@ -11,6 +11,9 @@ module.exports = {
     typography: (theme) => ({}),
     extend: {
       colors: {
+        appMain: "#0f0c29",
+        appSec: "#302b63",
+        appTer: "#24243e",
         main: "#3494E6",
         secondry: "#EC6EAD",
         mainTextLight: "#1D2671",

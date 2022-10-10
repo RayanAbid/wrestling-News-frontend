@@ -1,7 +1,11 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import Header from "../sections/Header";
+import SideBar from "../sections/SideBar";
 
 const Layout = ({ children }) => {
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -16,9 +20,18 @@ const Layout = ({ children }) => {
           content="Your one stop to everything wrestling"
         />
       </Head>
+
       <div className="min-h-screen flex flex-col">
         <Header />
-        <main className="flex-grow">{children}</main>
+
+        {router.pathname == "/" ? (
+          <main className="flex-grow">{children}</main>
+        ) : (
+          <div className="flex flex-no-wrap">
+            <SideBar />
+            <main className="flex-grow">{children}</main>
+          </div>
+        )}
       </div>
     </>
   );

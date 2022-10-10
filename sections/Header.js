@@ -1,8 +1,23 @@
 import { useTheme } from "next-themes";
+import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Button from "../components/Button";
+import { SidebarisOpen } from "../redux/actions";
 
 function Header() {
+  const state = useSelector((state) => state);
+  const dispatch = useDispatch();
+
+  const [isOpen, setIsOpen] = useState(state.isSidebarisOpen);
+
+  const sidebarHandler = async () => {
+    setIsOpen(!isOpen);
+    await dispatch(SidebarisOpen(isOpen));
+  };
+
+  const router = useRouter();
+
   const { systemTheme, theme, setTheme } = useTheme();
   const [show, setShow] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -53,8 +68,8 @@ function Header() {
   };
 
   return (
-    <div className="bg-gradient-to-r from-main  to-secondry">
-      <nav className="w-full drop-shadow-lg  bg-clip-padding bg-white bg-opacity-20 backdrop-blur-lg ">
+    <div className="bg-gradient-to-r from-main   to-secondry">
+      <nav className="w-full drop-shadow-lg py-5 bg-clip-padding bg-white bg-opacity-20 backdrop-blur-lg ">
         <div className="container mx-auto px-6 flex items-center justify-between">
           <div className="flex items-center" aria-label="Home" role="img">
             <img
@@ -66,14 +81,16 @@ function Header() {
               Wrestle Break
             </p>
           </div>
-          <div className="pt-20">
-            {/* <button
-            onClick={() => setShow(!show)}
-            className="sm:block md:hidden lg:hidden text-mainTextLight dark:text-textdarkMain light:hover:text-gray-800 dark:hover:text-textdarkMainHover dark:hover:text-textdarkMainHover focus:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
-          >
-            <i class="fas fa-bars"></i>
-          </button>
-          <div
+          <div className="">
+            {router.pathname != "/" && (
+              <button
+                onClick={() => sidebarHandler()}
+                className="sm:block md:hidden lg:hidden text-mainTextLight dark:text-textdarkMain light:hover:text-gray-800 dark:hover:text-textdarkMainHover dark:hover:text-textdarkMainHover focus:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
+              >
+                <i class="fas fa-bars"></i>
+              </button>
+            )}
+            {/* <div 
             id="menu"
             className={`md:block lg:block ${show ? "" : "hidden"}`}
           >

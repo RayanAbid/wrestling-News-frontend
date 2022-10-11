@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Button from "../components/Button";
 import { SidebarisOpen } from "../redux/actions";
 
-function Header() {
+function Header({ bgColor }) {
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
 
@@ -68,7 +68,11 @@ function Header() {
   };
 
   return (
-    <div className="bg-gradient-to-r from-main   to-secondry">
+    <div
+      className={`bg-gradient-to-r ${
+        bgColor ? bgColor : " from-main   to-secondry"
+      } `}
+    >
       <nav className="w-full drop-shadow-lg py-5 bg-clip-padding bg-white bg-opacity-20 backdrop-blur-lg ">
         <div className="container mx-auto px-6 flex items-center justify-between">
           <div className="flex items-center" aria-label="Home" role="img">
@@ -87,7 +91,7 @@ function Header() {
                 onClick={() => sidebarHandler()}
                 className="sm:block md:hidden lg:hidden text-mainTextLight dark:text-textdarkMain light:hover:text-gray-800 dark:hover:text-textdarkMainHover dark:hover:text-textdarkMainHover focus:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
               >
-                <i class="fas fa-bars"></i>
+                <i className="fas fa-bars"></i>
               </button>
             )}
             {/* <div 

@@ -7,7 +7,7 @@ function SideBar() {
 
   return (
     <>
-      <div className="w-64 absolute sm:relative bg-gradient-to-b from-main   to-secondry shadow md:h-full flex-col justify-between hidden sm:flex">
+      <div className="w-64 absolute sm:relative bg-gradient-to-b from-appMain   to-main shadow md:h-full flex-col justify-between hidden sm:flex">
         <div className="px-8">
           <div className="h-16 w-full flex items-center"></div>
           <ul className="mt-12 h-screen">
@@ -22,7 +22,7 @@ function SideBar() {
 
       <div className={`${!state.isSidebarisOpen ? "hidden" : "block"}`}>
         <div
-          className="w-64 z-40 absolute bg-gradient-to-b from-main   to-secondry shadow md:h-full flex-col justify-between sm:hidden  transition duration-150 ease-in-out"
+          className="w-64 z-40 absolute bg-gradient-to-b from-appMain   to-main shadow md:h-full flex-col justify-between sm:hidden  transition duration-150 ease-in-out"
           id="mobile-nav"
         >
           <div className="px-8 h-screen">

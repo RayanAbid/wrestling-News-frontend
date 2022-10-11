@@ -22,15 +22,20 @@ const Layout = ({ children }) => {
       </Head>
 
       <div className="min-h-screen flex flex-col">
-        <Header />
-
         {router.pathname == "/" ? (
-          <main className="flex-grow">{children}</main>
-        ) : (
-          <div className="flex flex-no-wrap">
-            <SideBar />
+          <>
+            <Header />
+
             <main className="flex-grow">{children}</main>
-          </div>
+          </>
+        ) : (
+          <>
+            <Header bgColor={"from-appMain to-main"} />
+            <div className="flex flex-no-wrap">
+              <SideBar />
+              <main className="flex-grow">{children}</main>
+            </div>
+          </>
         )}
       </div>
     </>

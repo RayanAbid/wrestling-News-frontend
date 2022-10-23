@@ -1,5 +1,6 @@
 const initialState = {
   isSidebarisOpen: false,
+  news: [],
 };
 
 const changeState = (state = initialState, { type, ...rest }) => {
@@ -8,6 +9,8 @@ const changeState = (state = initialState, { type, ...rest }) => {
       return { ...state, ...rest };
     case "SidebarisOpen":
       return { ...state, isSidebarisOpen: rest.data };
+    case "setAllNews":
+      return { ...state, news: rest.data };
 
     default:
       return state;

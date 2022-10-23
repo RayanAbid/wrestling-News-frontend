@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
           </>
         ) : (
           <>
-            <Header bgColor={"from-appMain to-main"} />
+            {/* <Header bgColor={"from-appMain to-main"} /> */}
             <div className="flex flex-no-wrap">
               <SideBar />
               <main className="flex-grow">{children}</main>

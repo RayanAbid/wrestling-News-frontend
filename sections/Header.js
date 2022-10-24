@@ -68,13 +68,14 @@ function Header({ bgColor }) {
   };
 
   return (
-    <div
-      className={`bg-gradient-to-r ${
-        bgColor ? bgColor : " from-main   to-secondry"
-      } `}
-    >
-      <nav className="w-full drop-shadow-lg py-5 bg-clip-padding bg-white bg-opacity-20 backdrop-blur-lg ">
-        <div className="container mx-auto px-6 flex items-center justify-between">
+    <div style={{ paddingBottom: "40px" }} className={` bg-appSec`}>
+      <nav
+        style={{
+          position: "fixed",
+        }}
+        className="w-full drop-shadow-lg py-5 bg-clip-padding bg-white bg-opacity-20 backdrop-blur-lg "
+      >
+        <div className="container  mx-auto px-6 flex items-center justify-between">
           <div className="flex items-center" aria-label="Home" role="img">
             <img
               className="cursor-pointer  w-8 sm:w-2 md:w-8"
@@ -86,14 +87,14 @@ function Header({ bgColor }) {
             </p>
           </div>
           <div className="">
-            {router.pathname != "/" && (
-              <button
-                onClick={() => sidebarHandler()}
-                className="sm:block md:hidden lg:hidden text-mainTextLight dark:text-textdarkMain light:hover:text-gray-800 dark:hover:text-textdarkMainHover dark:hover:text-textdarkMainHover focus:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
-              >
-                <i className="fas fa-bars"></i>
-              </button>
-            )}
+            {/* {router.pathname != "/" && ( */}
+            <button
+              onClick={() => sidebarHandler()}
+              className="sm:block md:hidden lg:hidden text-mainTextLight dark:text-textdarkMain light:hover:text-gray-800 dark:hover:text-textdarkMainHover dark:hover:text-textdarkMainHover focus:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
+            >
+              <i className="fas fa-bars"></i>
+            </button>
+            {/* )} */}
             {/* <div 
             id="menu"
             className={`md:block lg:block ${show ? "" : "hidden"}`}

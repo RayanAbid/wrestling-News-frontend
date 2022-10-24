@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
     <>
       <Head>
         <title>Wrestle Break</title>
-        <link rel="shortcut icon" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/logo.png" />
         <link
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
           rel="stylesheet"
@@ -22,21 +22,24 @@ const Layout = ({ children }) => {
       </Head>
 
       <div className="min-h-screen flex flex-col">
-        {router.pathname == "/" ? (
+        {/* {router.pathname == "/" ? (
           <>
             <Header />
 
             <main className="flex-grow">{children}</main>
           </>
-        ) : (
-          <>
-            {/* <Header bgColor={"from-appMain to-main"} /> */}
-            <div className="flex flex-no-wrap">
-              <SideBar />
-              <main className="flex-grow">{children}</main>
-            </div>
-          </>
-        )}
+        ) : ( */}
+        <>
+          {/* <Header bgColor={"from-appMain to-main"} /> */}
+          <div className="sm:block md:hidden lg:hidden">
+            <Header />
+          </div>
+          <div className="flex flex-no-wrap">
+            <SideBar />
+            <main className="flex-grow">{children}</main>
+          </div>
+        </>
+        {/* )} */}
       </div>
     </>
   );
